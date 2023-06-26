@@ -1,0 +1,110 @@
+.filter-form {
+  @media (min-width: $desktop-width) {
+    min-width: 318px;
+  }
+}
+
+.filter-form__wrapper {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+  }
+}
+
+.filter-form__fieldset {
+  margin: 0 0 30px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 0 30px;
+    min-width: 222px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 30px;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.filter-form__button-wrapper {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    max-width: fit-content;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+}
+
+.filter-form__button {
+  display: block;
+  border: none;
+  box-sizing: border-box;
+  padding: 8px 20px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: $base-primary;
+  color: $base-white;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $primary-lighter;
+    color: $base-white;
+  }
+
+  &:active {
+    background-color: $primary-darker;
+    color: $base-white;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+    color: $base-white;
+  }
+
+  &--reset {
+    color: $base-primary;
+    background-color: $base-white;
+
+    &:disabled {
+      background-color: $light-grey;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 0 20px;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 8px 27px;
+  }
+}

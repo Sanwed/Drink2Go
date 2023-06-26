@@ -1,0 +1,239 @@
+.fieldset {
+  border: none;
+  padding: 0;
+}
+
+.fieldset__title {
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+  &--big-margin {
+    margin-bottom: 30px;
+  }
+}
+
+.fieldset__slider {
+  margin-bottom: 33px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 28px;
+  }
+}
+
+.fieldset__input-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: calc(50% - 4px);
+    background-color: $base-grey;
+  }
+}
+
+.fieldset__input {
+  box-sizing: border-box;
+  width: 118px;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 2px solid $primary-lighter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $base-black;
+  font-family: inherit;
+  appearance: textfield;
+
+  &--radio,
+  &--checkbox {
+    @include hide;
+  }
+
+  &::placeholder {
+    font-weight: 500;
+    color: $base-grey;
+  }
+
+  &:hover,
+  &:focus {
+    border: 2px solid $primary-darker;
+    outline: none;
+  }
+
+  &:disabled {
+    color: $base-grey;
+    border: 2px solid $light-grey;
+    background-color: $lightest-grey;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 87px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 130px;
+  }
+}
+
+.fieldset__input::-webkit-outer-spin-button,
+.fieldset__input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.fieldset__label {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 24px;
+
+  &--hidden {
+    @include hide;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.fieldset__input--radio + .fieldset__text {
+  position: relative;
+  padding-left: 34px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    background-color: $base-white;
+    border-radius: 50%;
+    border: 2px solid $base-grey;
+  }
+}
+
+.fieldset__input--radio:hover:not(:disabled):not(:checked) + .fieldset__text,
+.fieldset__input--radio:focus:not(:disabled):not(:checked) + .fieldset__text {
+  &::before {
+    border-color: $base-primary;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background-color: $primary-opacity;
+  }
+}
+
+.fieldset__input--radio:checked + .fieldset__text {
+  &::before {
+    border-color: $base-primary;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    background-color: $base-primary;
+    border-radius: 50%;
+  }
+}
+
+.fieldset__input--radio:disabled + .fieldset__text {
+  color: $base-grey;
+
+  &::before {
+    border-color: $light-grey;
+  }
+
+  &::after {
+    background: $light-grey;
+  }
+}
+
+.fieldset__input--checkbox + .fieldset__text {
+  padding-left: 52px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 24px;
+    box-sizing: border-box;
+    background-color: $base-grey;
+    border-radius: 24px;
+    border: 2px solid $base-grey;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: $base-white;
+    border-radius: 50%;
+    transition: transform 0.1s linear;
+  }
+}
+
+.fieldset__input--checkbox:hover:not(:disabled):not(:checked) + .fieldset__text,
+.fieldset__input--checkbox:focus-visible:not(:disabled):not(:checked) + .fieldset__text {
+  &::before {
+    border-color: $base-primary;
+    background-color: $primary-opacity;
+  }
+}
+
+.fieldset__input--checkbox:checked + .fieldset__text {
+  &::before {
+    background-color: $base-primary;
+    border: 2px solid $base-primary;
+  }
+
+  &::after {
+    transform: translateX(18px);
+  }
+}
+
+.fieldset__input--checkbox:disabled + .fieldset__text {
+  color: $base-grey;
+
+  &::before {
+    background-color: $light-grey;
+    border: 2px solid $light-grey;
+  }
+
+  &::after {
+    background-color: $lightest-grey;
+  }
+}
+
+.fieldset__input--checkbox:disabled:checked + .fieldset__text {
+  &::after {
+    background-color: $base-grey;
+  }
+}

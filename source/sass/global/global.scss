@@ -1,0 +1,14 @@
+/* здесь используйте глобальные селекторы img, body, html и так далее*/
+body {
+  margin: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: $base-white;
+  color: $base-black;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+}

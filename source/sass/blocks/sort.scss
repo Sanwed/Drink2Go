@@ -1,0 +1,85 @@
+.sort {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: flex-end;
+  }
+}
+
+.sort__button {
+  display: flex;
+  font-family: inherit;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 16px;
+  min-width: 165px;
+  color: $base-primary;
+  margin-left: 8px;
+  font-weight: 600;
+  line-height: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $base-secondary;
+  }
+}
+
+.sort__button svg {
+  width: 10px;
+  margin-left: 10px;
+  height: 10px;
+  transition: transform 0.1s linear;
+}
+
+.sort__button--active svg {
+  transform: scaleY(-1);
+}
+
+.sort__list {
+  display: none;
+
+  &--opened {
+    position: absolute;
+    display: block;
+    width: 190px;
+    top: 42px;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.sort__item {
+  font-weight: 400;
+  padding: 8px 20px;
+  cursor: pointer;
+  background-color: $base-white;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $base-secondary;
+  }
+
+  &--current {
+    background-color: $base-primary;
+    color: $base-white;
+  }
+
+  &:hover:not(.sort__item--current),
+  &:focus-visible:not(.sort__item--current) {
+    background-color: $base-secondary;
+    outline: none;
+  }
+}

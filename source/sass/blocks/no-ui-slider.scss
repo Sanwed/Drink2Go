@@ -1,0 +1,79 @@
+.noUi-target {
+  border: none;
+  box-shadow: none;
+  height: 4px;
+  background-color: $light-grey;
+  border-radius: 0;
+}
+
+.noUi-origin .noUi-handle {
+  width: 24px;
+  height: 24px;
+  box-shadow: none;
+  border-radius: 50%;
+  border: 2px solid $primary-lighter;
+  top: -10px;
+
+  &::after,
+  &::before {
+    background: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      content: "";
+      top: 2px;
+      left: 2px;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      background-color: $primary-opacity;
+    }
+  }
+
+  &:active {
+    &::before {
+      background-color: $base-primary;
+    }
+  }
+}
+
+.noUi-origin .noUi-handle-upper {
+  right: 0;
+
+  @media (min-width: $desktop-width) {
+    right: -12px;
+  }
+}
+
+.noUi-origin .noUi-handle-lower {
+  right: -23px;
+}
+
+.noUi-connect {
+  background-color: $primary-lighter;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+
+[disabled].noUi-target,
+[disabled] .noUi-handle, {
+  cursor: default;
+}
+
+[disabled] .noUi-handle {
+  border: 2px solid $base-grey;
+
+  &:hover {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+[disabled] .noUi-connect {
+  background-color: $base-grey;
+}

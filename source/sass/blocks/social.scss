@@ -1,0 +1,39 @@
+.social__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social__item {
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.social__link {
+  @include center;
+  width: 40px;
+  height: 40px;
+
+  &:hover,
+  &:focus {
+    background-color: $base-secondary;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $primary-opacity;
+  }
+}
+
+.social__link svg {
+  fill: $base-grey;
+}
+
+.social__link:hover svg,
+.social__link:focus svg, {
+  fill: $base-primary;
+}
